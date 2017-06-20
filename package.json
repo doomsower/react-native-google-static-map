@@ -1,8 +1,9 @@
 {
   "name": "react-native-google-static-map",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "A wrapper for Google's Static Maps",
   "main": "GoogleStaticMap.js",
+  "typings": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git@github.com:yelled3/react-native-google-static-map.git"
