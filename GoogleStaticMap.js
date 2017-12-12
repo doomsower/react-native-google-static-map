@@ -1,4 +1,4 @@
-import {Image, PixelRatio} from 'react-native';
+import {ImageBackground, PixelRatio} from 'react-native';
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
@@ -119,12 +119,12 @@ class GoogleStaticMap extends Component {
 
   render() {
     return (
-      <Image
+      <ImageBackground
         style={[this.props.style, this.props.size]}
         source={{uri: this.staticMapUrl}}
       >
       {this.props.children}
-      </Image>
+      </ImageBackground>
     );
   }
 
@@ -141,7 +141,7 @@ class GoogleStaticMap extends Component {
 
     const {width, height} = size;
     const rootUrl = this.constructor.RootUrl;
-    
+
     return `${rootUrl}?center=${latitude},${longitude}&zoom=${zoom}&scale=${scale}&size=${width}x${height}&maptype=${mapType}&format=${format}&${this.markerParams}&${this.apiKeyParam}`;
   }
 
@@ -158,7 +158,7 @@ class GoogleStaticMap extends Component {
 
   get apiKeyParam() {
     const apiKey = this.props.apiKey | this.props.key;
-    
+
     return apiKey ? `key=${apiKey}` : '';
   }
 }
